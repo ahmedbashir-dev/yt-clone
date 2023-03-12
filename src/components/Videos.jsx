@@ -1,8 +1,11 @@
 import { Stack, Box } from '@mui/material'
 import {VideoCard, ChannelCard} from "./"
-const Videos = ({videos}) => {
+const Videos = ({videos, direction}) => {
+  if(!videos?.length){
+    return "loading...";
+  }
   return (
-    <Stack direction="row"
+    <Stack direction={direction || "row"}
         flexWrap="wrap"
         justifyContent="start"
         gap = {2}
